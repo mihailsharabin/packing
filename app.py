@@ -14,18 +14,20 @@ id_array = []
 def main():
     return render_template('index.html')
 
-
 @app.route("/do_pack", methods=["POST"])
 def do_pack():
 	# здесь доступен массив айдишников id_array
 
 	# вернуть строкой коробку
+	print(id_array)
 	return "result"
 	    
 @app.route("/add_item", methods=["POST"])
 def add_item():
 	id = request.form["id"]
 	id_array.append(id)
+
+	return "1"
 
 @app.route("/init_data", methods=["POST"])
 def init_data():
